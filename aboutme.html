@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>About Me | Akmaznaa</title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #cce7ff, #ffd6e7);
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            padding: 30px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-card {
+            background: white;
+            width: 75%;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .title-area {
+            margin-bottom: 60px;
+        }
+
+        .small-text {
+            color: #6699ff;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .about-title {
+            color: #ff66a3;
+            font-size: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .title-line {
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            margin: 18px auto;
+            border-radius: 20px;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 70px;
+            flex-wrap: wrap;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        .about-section img,
+        .about-video {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 6px solid #ffb6d9;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .about-section img:hover,
+        .about-video:hover {
+            transform: scale(1.03);
+        }
+
+        .about-text {
+            max-width: 450px;
+            text-align: left;
+        }
+
+        .about-text h3 {
+            color: #6699ff;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* 🎧 SONG BOX (GLOW ANIMATION) */
+        .song-box{
+            background: linear-gradient(135deg, #ffffff, #f7fbff);
+            width: 75%;
+            margin: 0 auto 70px auto;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(153, 204, 255, 0.25);
+            border: 2px solid rgba(255, 182, 217, 0.4);
+            position: relative;
+            overflow: hidden;
+
+            animation: glow 3s infinite ease-in-out;
+        }
+
+        /* ✨ glowing animation */
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px rgba(153, 204, 255, 0.3),
+                            0 0 20px rgba(255, 182, 217, 0.2);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(153, 204, 255, 0.6),
+                            0 0 35px rgba(255, 182, 217, 0.5);
+                transform: scale(1.01);
+            }
+
+            100% {
+                box-shadow: 0 0 10px rgba(153, 204, 255, 0.3),
+                            0 0 20px rgba(255, 182, 217, 0.2);
+                transform: scale(1);
+            }
+        }
+
+        .song-box::before{
+            content: "🎧";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 60px;
+            opacity: 0.15;
+            transform: rotate(15deg);
+        }
+
+        .song-box h3{
+            color: #ff66a3;
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .song-box p{
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .song-box audio{
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .home-btn:hover {
+            transform: scale(1.05);
+        }
+
+	footer {
+    	   margin-top: 20px;
+           padding: 15px;
+    	   color: #444;
+	}
+
+        @media(max-width: 768px){
+
+            .about-card,
+            .song-box {
+                width: 90%;
+                padding: 25px;
+            }
+
+            .about-section,
+            .reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .about-section img,
+            .about-video {
+                width: 220px;
+                height: 220px;
+            }
+
+            .about-title {
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>☁️🎀 Akmaznaa Website 🎀☁️</h1>
+        <p>Welcome to my life 💙💖</p>
+    </header>
+
+    <div class="about-card">
+
+        <div class="title-area">
+            <p class="small-text">☁️ Get To Know Me ☁️</p>
+            <h2 class="about-title">About Akma 🪄</h2>
+            <div class="title-line"></div>
+        </div>
+
+        <!-- SECTION 1 -->
+        <div class="about-section">
+
+            <img src="photo for about me/photo_2026-05-24_23-34-18.jpg">
+
+            <div class="about-text">
+                <h3>Myself 🌷</h3>
+                <p>
+                    This is me, Nur Saidatulakma binti Mohd Zana. I am going to turn 20 this July. 
+                    I am an ambivert. Sometimes I can be very loud, and at other times I can become the 
+                    quietest person depending on who I am with. However, this does not mean I am not friendly.
+                    I enjoy meeting new people and making friends with those I feel comfortable with.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="about-section reverse">
+
+            <video class="about-video" controls>
+                <source src="video for about me/video_2026-05-30_17-20-37.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="about-text">
+                <h3>Brass Band Member 🎶</h3>
+                <p>
+                    I am a member of the UiTM Kedah Brass Band, which is called De Felcon. I started my brass band 
+                    journey when I was in my first semester at UiTM Kedah. I really enjoy being a brass band member,
+                    although it can be very tiring, especially when there are performances that we need to prepare for.
+                    It has been such a good experience and has created many beautiful memories that I will keep forever 
+                    in my heart.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- SECTION 3 (SONG BOX GLOW) -->
+        <div class="song-box">
+
+            <h3>🎧 My Favourite Song</h3>
+
+            <p>My top 1 favourite song that I will always listen to without ever getting bored which is Kal Ho Naa Ho</p>
+
+            <audio controls>
+    	        <source src="song for about me/kal ho naa ho.mpeg" type="audio/mpeg">
+		Your browser does not support the audio element.
+	    </audio>
+
+        </div>
+
+        <a class="home-btn" href="index.html">
+            🏠 Back to Home
+        </a>
+
+	</div>
+
+	<footer>
+           <p>© 2026 Akmaznaa Website 💙🎀</p>
+	</footer>
+
+
+</body>
+</html>

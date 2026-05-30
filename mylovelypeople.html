@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Aesthetic Website</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Nunito:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #cce7ff, #ffd6e7);
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            padding: 30px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .card {
+            background: white;
+            width: 80%;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        /* SECTION TITLE (iPHONE STYLE) */
+        .section-title {
+            margin-top: 45px;
+            font-size: 26px;
+            font-weight: 700;
+            font-family: 'Nunito', sans-serif;
+            color: #ff4fa3;
+            display: inline-block;
+            padding: 6px 18px;
+            background: rgba(255, 182, 217, 0.18);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            letter-spacing: 0.5px;
+        }
+
+        /* DESCRIPTION */
+        .section-desc {
+            font-size: 14px;
+            color: #777;
+            margin-top: 8px;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* POLAROID UPGRADE */
+        .polaroid {
+            background: #fff;
+            padding: 10px 10px 18px 10px;
+            width: 180px;
+            border-radius: 15px;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+            transform: rotate(-2deg);
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* cute sticker */
+        .polaroid::before {
+            content: "🎀";
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 14px;
+            color: #ff7ab6;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.07) rotate(0deg);
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .caption::after {
+            content: " 💕";
+        }
+
+        /* HOME BUTTON */
+        .home-btn {
+            display: block;
+            width: fit-content;
+            margin: 45px auto 0 auto;
+            text-decoration: none;
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .home-btn:hover {
+            transform: scale(1.05);
+        }
+
+	footer {
+           margin-top: 0;
+           padding: 15px 0 25px;
+           color: #444;
+           text-align: center;
+	}
+
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>☁️🎀 Akmaznaa Website 🎀☁️</h1>
+    <p>Welcome to my life 💙💖</p>
+</header>
+
+<div class="card">
+
+	<!-- FAMILY -->
+	<div class="section-title">👨‍👩‍👧‍👦 Family</div>
+	<div class="section-desc">This is my family. I have 7 siblings, and I am the sixth child. I have 2 older brothers, 3 older sisters, and 1 younger brother. My family will always be 	my safe place and biggest support system 💗. I am very thankful to have such supportive parents. Even though they are not the type of parents who express their love with sweet 	words, I can see it through their actions. They are willing to do anything to make us comfortable and help us achieve the highest education possible, even though we are not a rich 	family. I love my parents so much, and I hope that one day I will be able to repay all of their sacrifices and make them proud ❤️🌈 </div>
+
+    <div class="gallery">
+        <div class="polaroid">
+            <img src="photo for my lovely people/WhatsApp Image 2026-05-27 .jpeg">
+            <div class="caption">my cute parents 🎀</div>
+        </div>
+        <div class="polaroid">
+            <img src="photo for my lovely people/WhatsApp Image 2026-05-27 (2).jpeg">
+            <div class="caption">My full family members 🧚🏻</div>
+        </div>
+        <div class="polaroid">
+            <img src="photo for my lovely people/WhatsApp Image 2026-05-27 (3).jpeg">
+            <div class="caption">My favorite person to annoy 🥹</div>
+        </div>
+    </div>
+
+	<!-- BESTFRIEND -->
+    	<div class="section-title">💞 Besties</div>
+    	<div class="section-desc">This is my best friend since Form 1. She is the only person who can tolerate my sulking and stubborn attitude. She always acts like she’s older than me 	even though her birthday is only 2 days earlier than mine, yet she still loves teasing me by calling me “adik”. We fight like cats and dogs sometimes, but she has always been by my 	side no matter what. Even though we rarely meet now, we always make an effort to find time to go out and spend time together. She is basically my personal diary because she knows 	almost everything about me, and she’s always the first person I’ll tell whenever something happens. I’m really grateful to have her in my life 🌻✨</div>
+
+    <div class="gallery">
+        <div class="polaroid">
+            <img src="photo for my lovely people/photo_2026-03-22_16-18-23.jpg">
+            <div class="caption">My cutesy girl 🦢</div>
+        </div>
+        <div class="polaroid">
+            <img src="photo for my lovely people/photo_2026-05-27_19-29-24.jpg">
+            <div class="caption">My chaos partner 💥</div>
+        </div>
+        <div class="polaroid">
+            <img src="photo for my lovely people/photo_2026-04-02_20-31-20.jpg">
+            <div class="caption">My partner in crime 🧟</div>
+        </div>
+    </div>
+
+    	<!-- FRIENDS -->
+    	<div class="section-title">🌷 My Safe Circle</div>
+    	<div class="section-desc">These are the friends that I made during secondary school and university. Having them in my life has been one of the best things ever, and I’m really glad 	that I got to know them in this lifetime. They are always there for me whenever I need help, whether in studies or personal problems. I’m also very grateful because they are always 	willing to teach and guide me whenever I do not understand something. We have created so many beautiful memories together, from laughing over small things to supporting each other 	during hard times. Even though everyone is busy with their own life now, I truly hope our friendship will last forever 🫶💗</div>
+
+    <div class="gallery">
+        <div class="polaroid">
+            <img src="photo for my lovely people/photo_2025-09-24_18-31-44.jpg">
+            <div class="caption">My buddies 😼</div>
+        </div>
+        <div class="polaroid">
+            <img src="photo for my lovely people/photo_2026-05-27_20-27-37.jpg">
+            <div class="caption">My chaos crew 🥴</div>
+        </div>
+        <div class="polaroid">
+            <img src="photo for my lovely people/photo_2026-05-27_20-36-38.jpg">
+            <div class="caption">My lovely roomate 🧸</div>
+        </div>
+    </div>
+
+    <!-- HOME BUTTON -->
+    <a class="home-btn" href="index.html">
+        🏠 Back to Home
+    </a>
+
+</div>
+
+	<footer>
+           <p>© 2026 Akmaznaa Website 💙🎀</p>
+	</footer>
+
+</body>
+</html>

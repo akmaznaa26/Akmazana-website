@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Education</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Cute Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #cce7ff, #ffd6e7);
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            padding: 30px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            background: white;
+            width: 75%;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .education-title {
+            font-family: 'Pacifico', cursive;
+            color: #ff66a3;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        /* Anchor Navigation */
+        .section-nav {
+            margin-bottom: 30px;
+        }
+
+        .section-nav a {
+            text-decoration: none;
+            background: linear-gradient(to right, #ffe6f2, #e6f2ff);
+            color: #ff66a3;
+            padding: 10px 18px;
+            margin: 6px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+            display: inline-block;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        .section-nav a:hover {
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+        }
+
+        /* Table Style */
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        th {
+            background: #ffb6d9;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        td {
+            background: #fdf5ff;
+            padding: 15px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        tr:nth-child(even) td {
+            background: #eef5ff;
+        }
+
+        /* Photo Section */
+        .photo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .photo-card {
+            background: linear-gradient(to bottom right, #ffe6f2, #e6f2ff);
+            padding: 18px;
+            border-radius: 25px;
+            width: 320px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 18px;
+        }
+
+        .title {
+            color: #ff66a3;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 12px;
+        }
+
+        .description {
+            background: white;
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            min-height: 70px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 35px;
+            text-decoration: none;
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .home-btn:hover {
+            transform: scale(1.05);
+        }
+
+	footer {
+    	   margin-top: 20px;
+           padding: 15px;
+    	   color: #444;
+	}
+
+
+        .emoji {
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>☁️🎀 Akmaznaa Website 🎀☁️</h1>
+        <p>Welcome to my life 💙💖</p>
+    </header>
+
+    <div class="card">
+
+        <h2 class="education-title">🎓 My Education Journey</h2>
+
+        <!-- Anchor Navigation -->
+        <div class="section-nav">
+            <a href="#kindergarten">Kindergarten</a>
+            <a href="#primary">Primary School</a>
+            <a href="#secondary">Secondary School</a>
+            <a href="#university">University</a>
+        </div>
+
+        <!-- Education Table -->
+        <table>
+            <tr>
+                <th>Education Level</th>
+                <th>School / University</th>
+                <th>Location</th>
+            </tr>
+
+            <tr>
+                <td>Kindergarten</td>
+                <td>Pra Ibnu Khaldun, Sk Kota Jembal</td>
+                <td>Kota Bharu, Kelantan</td>
+            </tr>
+
+            <tr>
+                <td>Primary School</td>
+                <td>Sekolah Kebangsaan Kota Jembal</td>
+                <td>Kota Bharu, Kelantan</td>
+            </tr>
+
+            <tr>
+                <td>Secondary School</td>
+                <td>Sekolah Menengah Kebangsaan Raja Sakti</td>
+                <td>Kota, Bharu, Kelantan</td>
+            </tr>
+
+            <tr>
+                <td>University</td>
+                <td>Universiti Teknologi MARA (UiTM), Kedah Branch</td>
+                <td>Merbok, Kedah</td>
+            </tr>
+        </table>
+
+        <!-- Photo Section -->
+        <div class="photo-container">
+
+            <div class="photo-card" id="kindergarten">
+                <img src="photo for education/photo_2026-05-26_22-01-07.jpg" alt="Kindergarten">
+
+                <p class="title">Kindergarten</p>
+
+                <div class="description">
+                    I started my kindergarten journey in 2012 at Pra Ibnu Khaldun, Sekolah Kota Jembal, where I studied for one year. I truly cherish all the beautiful memories I created 		    there with my friends. One of my favourite moments was spending time at the playground in front of our classroom together with my classmates. I also really loved the 		    teachers who taught me because they were kind and caring. Until today, I still remember them and the happy moments I experienced during my kindergarten days 🌸🎀
+                </div>
+            </div>
+
+            <div class="photo-card" id="primary">
+                <img src="photo for education/WhatsApp Image 2026-05-26.jpeg" alt="Primary School">
+
+                <p class="title">Primary School</p>
+
+                <div class="description">
+                    This photo was taken when I was in Year 4, and my class name was 4 Pintar. I still remember that there were around 40 students in this class. I was not really close to 		    everyone, especially the boys, but I still had a few close friends who always went to the canteen, toilet, and many other places together with me. I have not met most 		    of them since we finished UPSR, but I still remember the memories we shared together ✨💖
+                </div>
+            </div>
+
+            <div class="photo-card" id="secondary">
+                <img src="photo for education/WhatsApp Image 2026-05-26 .jpeg" alt="Secondary School">
+
+                <p class="title">Secondary School</p>
+
+                <div class="description">
+                    This photo was taken when I was in Form 5 Ibnu Sina. Most of them had been my classmates since Form 1, so we shared many memories and struggles together, especially 		    while preparing for SPM. I still remember going to extra classes every Friday and Saturday, and buying food from the "pasar pagi" near our school during break time. Our 		    teachers were also very friendly, which made learning less stressful and more fun 🥰💞
+                </div>
+            </div>
+
+            <div class="photo-card" id="university">
+                <img src="photo for education/WhatsApp Image 2026-05-27.jpeg" alt="University">
+
+                <p class="title">University</p>
+
+                <div class="description">
+                    This is my classmates when I was in Semester 1. Even though we were only classmates for one semester because our class was disbanded, I really enjoyed being with them 		    because they were very friendly, caring, and always helped each other with assignments. From Semester 2 until Semester 4, I am now in Class E, and the vibe feels almost 		    the same as my previous class, which makes me feel comfortable because they never treat us like strangers. Sadly, we do not have a proper photo together to put here, but I 		    truly appreciate and love all my friends in university, whether they are my classmates, roommates, or band members 🥺🎀
+                </div>
+            </div>
+
+        </div>
+
+        <a class="home-btn" href="index.html">
+            🏠 Back to Home
+        </a>
+
+    </div>
+
+	<footer>
+           <p>© 2026 Akmaznaa Website 💙🎀</p>
+	</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Aesthetic Gallery</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #cce7ff, #ffd6e7);
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            padding: 30px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            background: white;
+            width: 70%;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 22px;
+            color: #ff4fa3;
+            margin-top: 30px;
+        }
+
+        .desc {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .viewer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            padding: 10px;
+            position: relative;
+        }
+
+        .viewer img {
+            width: 100%;
+            max-width: 380px;
+            height: 260px;
+            object-fit: cover;
+            display: none;
+            border-radius: 16px;
+        }
+
+        .viewer p {
+            padding: 12px;
+            background: linear-gradient(to right, #ffe6f2, #e6f2ff);
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+            width: 100%;
+        }
+
+        .btn-group button {
+            padding: 10px 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 20px;
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .home-btn {
+            display: block;
+            margin: 25px auto 0;
+            width: fit-content;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: linear-gradient(to right, #99ccff, #ffb6d9);
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 0;
+            padding: 15px;
+            text-align: center;
+            color: #444;
+        }
+
+        /* ===== FULLSCREEN OVERLAY ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 20px;
+        }
+
+        .lightbox-controls {
+            margin-top: 15px;
+        }
+
+        .lightbox-controls button {
+            margin: 5px;
+            padding: 10px 16px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* fullscreen icon */
+        .fs-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            border-radius: 10px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>☁️🎀 Akmaznaa Website 🎀☁️</h1>
+    <p>Welcome to my life 💙💖</p>
+</header>
+
+<div class="card">
+
+    <div class="title">📸 Photo Memories</div>
+    <div class="desc">A collection of my best photo moments</div>
+
+    <div class="viewer">
+        <img id="photoImg">
+        <button class="fs-btn" onclick="openFull()">Click here 🖼️</button>
+        <p id="photoCaption">Loading...</p>
+    </div>
+
+    <div class="btn-group">
+        <button onclick="prevPhoto()">⬅ Back</button>
+        <button onclick="nextPhoto()">Next ➡</button>
+    </div>
+
+    <a class="home-btn" href="index.html">🏠 Back to Home</a>
+</div>
+
+<!-- FULLSCREEN -->
+<div class="lightbox" id="lightbox">
+    <img id="lbImg">
+    <div class="lightbox-controls">
+        <button onclick="prevPhoto()">⬅</button>
+        <button onclick="closeFull()">❌ Close</button>
+        <button onclick="nextPhoto()">➡</button>
+    </div>
+</div>
+
+<script>
+
+/* ===== YOUR ORIGINAL PHOTOS (UNCHANGED) ===== */
+const photos = [
+    {src:"photo for gallery/photo_2026-05-27_22-07-59.jpg", text:"A photo with my youngest brother when we were little 🥺"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-08-38.jpg", text:"A photo taken when I was in primary scchool during sport day💖"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-21-51.jpg", text:"Having ramen at my bestfirend house is the best thing ever🌷"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-02.jpg", text:"Playing in the rain after coming back from school, I miss those moments so much 🌧️💗"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-07.jpg", text:"Celebrating Hari Raya at school 🌙✨"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-13.jpg", text:"This picture was taken during a family vacation in Terengganu 💗"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-24.jpg", text:"Visit to Multimedia University (MMU) as foster students ✨💖"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-30.jpg", text:"Miss this so much🌷☃️"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-35.jpg", text:"This picture was taken right after our Pendidikan Islam (PI) exam 😭✨"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-47.jpg", text:"Being supportive and accompanying my best friend to wear a Hanfu during Hari Raya Aidiladha 🥴💞"}, 
+    {src:"photo for gallery/photo_2026-05-27_22-22-42.jpg", text:"Becoming a dulang girl at my eldest brother’s wedding 💗✨"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-01-43.jpg", text:"My first perfomance as brass band member at mini stadium for Co-curriculum closing ceremony 🤓✨"}, 
+    {src:"photo for gallery/photo_2025-10-15_23-21-26.jpg", text:"Doing performance for Club Fest at Dewan Perdana 💂‍♀️🥁"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-01-49.jpg", text:"Performing to welcome all Universiti Teknologi MARA TNCs at Dewan Perdana 🎶🥁"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-01-55.jpg", text:"Final song rehearsal before performing for the Dean’s Award ceremony at Dewan Perdana 🎤🎶"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-02-04.jpg", text:"Walking around Universiti Teknologi MARA with friends and stopping by Tasik Merbok to take pictures 📸🌿"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-02-08.jpg", text:"Taking pictures during extra class using the Smart TV 📺🤯"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-02-15.jpg", text:"Having a potluck with all my girl classmates at Pantai Nami 🏖️🍱"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-02-21.jpg", text:"Our teacher took a photo of us while we were doing a Chemistry experiment 🧪📸"}, 
+    {src:"photo for gallery/photo_2025-11-15_19-15-32.jpg", text:"Going out with friends to eat sushi 🍣✨"}, 
+    {src:"photo for gallery/photo_2026-04-08_12-11-34.jpg", text:"Playing badminton at the sports unit 🏸🌤️"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-33-49.jpg", text:"My favourite photo of me with a sunset at the beach 🌅💗"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-33-54.jpg", text:"I forced my mom to pose like me, she looks so cute 😭💗"}, 
+    {src:"photo for gallery/photo_2026-05-27_23-34-03.jpg", text:"Eating ice cream at the beach, treated by my dad 🍦🥰"} ];
+let p = 0;
+
+function showPhoto(){
+    document.getElementById("photoImg").src = photos[p].src;
+    document.getElementById("photoImg").style.display = "block";
+    document.getElementById("photoCaption").innerText = photos[p].text;
+
+    document.getElementById("lbImg").src = photos[p].src;
+}
+
+function nextPhoto(){
+    p = (p + 1) % photos.length;
+    showPhoto();
+}
+
+function prevPhoto(){
+    p = (p - 1 + photos.length) % photos.length;
+    showPhoto();
+}
+
+/* FULLSCREEN */
+function openFull(){
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeFull(){
+    document.getElementById("lightbox").style.display = "none";
+}
+
+/* INIT */
+showPhoto();
+
+</script>
+
+<footer>
+    <p>© 2026 Akmaznaa Website 💙🎀</p>
+</footer>
+
+</body>
+</html>
